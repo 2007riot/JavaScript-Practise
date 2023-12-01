@@ -90,22 +90,21 @@ function reverseString(a) {
 }
 console.log("Reverse string: " + reverseString("Hello"))
 // Escribe una función que tome una cadena de texto y un carácter como argumentos, y devuelva la cantidad de veces que el carácter aparece en la cadena.
-function countChar (a) {
+function countChar (a, char) {
+
     const arr = a.split("");
     let countChar = 0;
-    // for (let index = 0; index < arr.length; index++) {
-    
-    // }
 
-    if (arr.includes("a")) {
-        countChar += 1;
-        console.log(countChar);
-        // console.log(index);
-    }
-    return countChar;
+    arr.forEach(element => {
+    if (element === char) {
+        countChar+=1;
+    } })
+
+    return countChar 
 }
-console.log("counting characters: " + countChar("Galina"));
+console.log("counting characters: " + countChar("Galina", "h"));
 // Escribe una función que tome una cadena de texto como argumento y devuelva la misma cadena sin espacios en blanco.
+
 
 // Escribe una función que tome una cadena de texto como argumento y devuelva true si es un palíndromo (se lee igual de izquierda a derecha y de derecha a izquierda), o false si no lo es.
 
@@ -116,10 +115,46 @@ console.log("counting characters: " + countChar("Galina"));
 // Arrays:
 
 // Escribe una función que tome un array de números como argumento y devuelva la suma de todos sus elementos.
+function calcSumOfArr(a) {
+    let sum = 0;
+    for (let index = 0; index < a.length; index++) {
+        sum += a[index];
+    }
+    return sum;
+}
+console.log("Sum of the array: " + calcSumOfArr([1,25,6]));
 // Escribe una función que tome un array de números como argumento y devuelva el promedio de todos sus elementos.
+function average(a) {
+    return calcSumOfArr(a)/a.length;
+}
+console.log("Average of the sum of the array: " + average([2,5,5,4]))
 // Escribe una función que tome un array de números como argumento y devuelva el array ordenado de forma ascendente.
+
+//callback function
+// function compareNumbers(a, b) {
+//     return a - b;
+// }
+// function sortAsc (arr) {
+//     return arr.sort(compareNumbers);//behind the scene:
+//compareNumbers(100, 250);  
+// compareNumbers(250, 5);   
+// compareNumbers(5, 1);    
+// compareNumbers(1, -10);
+// }
+
+//version with the closure
+function sortAsc (arr) {
+    return arr.sort(function(a,b) {return a-b})
+}
+console.log("Asc sort: " + sortAsc([100,250,5,1,-10]))
+
 // Escribe una función que tome un array de números y un número como argumentos, y devuelva un nuevo array con los elementos mayores al número dado.
+function filterGreaterThan (arr, n) {
+    return 
+}
+console.log("Greater than number " + filterGreaterThan([1,100,90,500,495,7,9,-70],200))
 // Escribe una función que tome dos arrays como argumentos y devuelva un nuevo array con todos los elementos de ambos arrays.
+
 // Escribe una función que tome un array de números como argumento y devuelva el número máximo dentro del array.
 // Escribe una función que tome un array de números como argumento y devuelva el número mínimo dentro del array.
 // Escribe una función que tome un array y un elemento como argumentos, y devuelva la cantidad de veces que el elemento aparece en el array.
